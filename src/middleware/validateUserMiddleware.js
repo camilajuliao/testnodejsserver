@@ -4,12 +4,11 @@ import User from '../models/User.js';
 export const validateUserExist= async (req, res, next) => {
      const {id} = req.params;
   try {
-     console.log(id);
      const user = await User.getUserById(id);
-     console.log(user);
     if(user === null){
         return res.status(404).json({ message: 'Usuario no encontrado', data: null, error: 'Usuario no encontrado', success: false });
     }else{
+          console.log(user.numero_movil);
         req.mobileNumber = user.numero_movil; 
         next();
     }
