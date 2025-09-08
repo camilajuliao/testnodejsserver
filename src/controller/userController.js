@@ -18,7 +18,10 @@ export const getAllUsers = async (req, res) => {
 export   const getUserById = async (req, res) => {
     try {
         const { id } = req.params;
+        console.log("the current id is");
         const user = await User.getUserById(id);
+        console.log(user);
+
         if (!user) {
             return user
         }else{
