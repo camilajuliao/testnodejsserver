@@ -10,7 +10,7 @@ export const validateUserExist= async (req, res, next) => {
     if(user === null){
         return res.status(404).json({ message: 'Usuario no encontrado', data: null, error: 'Usuario no encontrado', success: false });
     }else{
-        req.mobileNumber = user.mobileNumber; 
+        req.mobileNumber = user.numero_movil; 
         next();
     }
   } catch (error) {
