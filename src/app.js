@@ -1,6 +1,6 @@
 import express from 'express'
 import { getAllUsers } from './controller/userController.js'
-import { validateJwt } from './middleware/AuthMiddleware.js'
+import { validateJwt } from './middleware/authMiddleware.js'
 import {validateUserExist} from './middleware/validateUserMiddleware.js'
 import { getCuposByMovilNumber } from './controller/cuposController.js'
 
