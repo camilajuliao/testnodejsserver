@@ -9,13 +9,10 @@ export default class Cupos {
                     c.saldo,
                     c.numero_movil,
                     c.plataforma,
-                    p.name as plataforma_nombre,
-                    c.created_at,
-                    c.updated_at
+                    p.name as plataforma_nombre
                  FROM cupos c
                  INNER JOIN plataforma p ON c.plataforma = p.id
-                 WHERE c.numero_movil = ?
-                 ORDER BY c.id`,
+                 WHERE c.numero_movil = ?`,
                 [movilNumber]
             );
     return rows[0];
