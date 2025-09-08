@@ -1,4 +1,4 @@
-import {getUserById } from '../controller/UserController.js'
+import {getUserById } from '../controller/userController.js'
 
 export const validateUserExist= async (req, res, next) => {
      const userId = req.params.id;
