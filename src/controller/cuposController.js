@@ -3,6 +3,7 @@ import Cupos from "../models/Cupos.js";
 export const getCuposByMovilNumber = async (req, res) => {
     try {
         const { mobileNumber } = req.mobileNumber;
+        console.log(mobileNumber);
         const cupos = await Cupos.getCuposByMovilNumber(mobileNumber);
         if (cupos.length === 0) {
             return res.status(404).json({ message: 'No se encontraron cupos para el número móvil proporcionado', data: null, error: '', success: false });
