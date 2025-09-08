@@ -2,7 +2,7 @@ import Cupos from "../models/Cupos.js";
 
 export const getCuposByMovilNumber = async (req, res) => {
     try {
-        const { mobileNumber } = req.mobileNumber;
+        const mobileNumber = req.mobileNumber;
         console.log(mobileNumber);
         const cupos = await Cupos.getCuposByMovilNumber(mobileNumber);
         if (cupos.length === 0) {
